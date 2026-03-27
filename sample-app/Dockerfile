@@ -1,9 +1,5 @@
 FROM eclipse-temurin:21-jdk-alpine
 
-WORKDIR /app
-
-COPY target/*.jar app.jar
+COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
-
-ENTRYPOINT ["java","-jar","app.jar"]
